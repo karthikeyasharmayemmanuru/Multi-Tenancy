@@ -4,8 +4,8 @@ import { registerAs } from '@nestjs/config';
 
 export default registerAs('database', () => ({
   // Primary database connection - FIXED: Handle undefined URI
-  uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/multitenant_ui_config',
-  dbName: process.env.MONGODB_DB_NAME || 'multitenant_ui_config',
+  uri: process.env.MONGODB_URI || 'mongodb+srv://karthikeyasharma007:AUDNWmlgfxjMsWTp@multitenant-ui-cluster.mslb5oo.mongodb.net/?retryWrites=true&w=majority&appName=multitenant-ui-cluster',
+  dbName: process.env.MONGODB_DB_NAME || 'multitenant_ui_config_db',
   
   // Connection options for MongoDB - FIXED: Handle undefined numbers
   options: {
@@ -22,8 +22,8 @@ export default registerAs('database', () => ({
     connectTimeoutMS: 10000,
     
     // Buffering (disable for better error handling)
-    bufferMaxEntries: 0,
-    bufferCommands: false,
+    //bufferMaxEntries: 0,
+    //bufferCommands: false,
     
     // Retry logic
     retryWrites: true,
